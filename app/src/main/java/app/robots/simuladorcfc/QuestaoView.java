@@ -9,6 +9,7 @@ public class QuestaoView {
     private String alt4;
     private String img;
     private String correto;
+    private boolean escolha;
 
     public QuestaoView()
     {
@@ -79,6 +80,14 @@ public class QuestaoView {
 
     public void setCorreto(String correto) {
         this.correto = correto;
+    }
+
+    public boolean getEscolha() {
+        return escolha;
+    }
+
+    public void setEscolha(boolean escolha) {
+        this.escolha = escolha;
     }
 
 }

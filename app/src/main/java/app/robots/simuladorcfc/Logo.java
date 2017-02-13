@@ -2,14 +2,14 @@ package app.robots.simuladorcfc;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Logo extends AppCompatActivity {
+public class Logo extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class Logo extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), Login.class));
         } else {
             Intent intent;
-            intent = new Intent(getApplicationContext(), Simulacao.class);
+            intent = new Intent(getApplicationContext(), Inicial.class);
             startActivity(intent);
         }
     }

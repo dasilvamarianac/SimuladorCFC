@@ -127,7 +127,7 @@ public class Login extends AppCompatActivity {
                             editor.putString("logado", jsonObject.getString("id"));
                             editor.putString("nome", jsonObject.getString("nome"));
                             editor.commit();
-                            startActivity(new Intent(getApplicationContext(), Senha.class));
+                            startActivity(new Intent(getApplicationContext(), Inicial.class));
 
                         } else {
 

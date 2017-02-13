@@ -28,7 +28,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Senha extends AppCompatActivity {
-
+    private MenuActivity menui;
     private String idUser;
     private EditText senha;
     private EditText nsenha;
@@ -43,6 +43,14 @@ public class Senha extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_senha);
         SharedPreferences prefs = getSharedPreferences("cfc", MODE_PRIVATE);
+
+        ImageButton menu = (ImageButton) findViewById(R.id.menu);
+        menu.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                menui = new MenuActivity();
+                menui.initiatePopupWindow(Senha.this, v);
+            }
+        });
 
         idUser = prefs.getString("logado","");
 

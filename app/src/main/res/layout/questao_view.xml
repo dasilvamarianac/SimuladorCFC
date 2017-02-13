@@ -39,7 +39,8 @@
                 android:visibility="visible"
                 android:layout_weight="0.9"
                 android:layout_margin="5dp"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
         </LinearLayout>
 
         <Button
@@ -49,7 +50,8 @@
             android:id="@+id/alt1"
             android:gravity="left|center_vertical"
             android:background="@android:color/transparent"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
 
         <Button
 
@@ -58,7 +60,8 @@
             android:id="@+id/alt2"
             android:gravity="left|center_vertical"
             android:background="@android:color/transparent"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
 
         <Button
 
@@ -67,7 +70,8 @@
             android:id="@+id/alt3"
             android:gravity="left|center_vertical"
             android:background="@android:color/transparent"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            android:textSize="14sp"/>
 
         <Button
 
@@ -76,7 +80,8 @@
             android:id="@+id/alt4"
             android:gravity="left|center_vertical"
             android:background="@android:color/transparent"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            android:textSize="14sp"/>
 
     </LinearLayout>
 

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="app.robots.simuladorcfc">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,7 +25,8 @@
         <activity android:name=".Senha" />
         <activity android:name=".Inicial" />
         <activity android:name=".Simulacao" />
-        <activity android:name=".Resultado"></activity>
+        <activity android:name=".Resultado" />
+        <activity android:name=".MenuActivity"></activity>
     </application>
 
 </manifest>

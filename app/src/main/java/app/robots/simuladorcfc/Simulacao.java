@@ -5,8 +5,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.StrictMode;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -30,7 +32,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Simulacao  extends Activity implements AdapterView.OnItemClickListener {
+public class Simulacao  extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
 
     private ListView listView;
@@ -43,14 +45,21 @@ public class Simulacao  extends Activity implements AdapterView.OnItemClickListe
     @Override
     protected void onCreate(Bundle instance) {
 
+
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
         requestQueue = Volley.newRequestQueue(this);
 
-
         super.onCreate(instance);
         setContentView(R.layout.activity_simulacao);
+
+        Button menu = (Button) findViewById(R.id.btnTeste);
+        menu.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Log.i("teste", "entrooou");
+            }
+        });
 
 
         listView = (ListView) findViewById(R.id.simuladorListview);
@@ -128,14 +137,7 @@ public class Simulacao  extends Activity implements AdapterView.OnItemClickListe
 
     public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3)
     {
-        /*QuestaoView item = adapterListView.getItem(arg2);
-        Intent intent = new Intent(SignalListActivity.this,MyoActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        intent.putExtra("sinal", item.getTexto());
-        intent.putExtra("img", item.getIconeRid());
-        intent.putExtra("type", "0");
-        SignalListActivity.this.startActivity(intent);*/
-        ;
-        Toast.makeText(getApplicationContext(), "Clicou", Toast.LENGTH_SHORT).show();
+        QuestaoView item = adapterListView.getItem(arg2);
+        Log.i("teste", item.getAlt1());
     }
 }
