@@ -1,28 +1,27 @@
 package app.robots.simuladorcfc;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class SimulacaoAdapter extends BaseAdapter {
+public class ResultadoAdapter extends BaseAdapter {
 
     public LayoutInflater mInflater;
     public ArrayList<QuestaoView> itens;
     public String urlimg;
     public QuestaoView item;
 
-    public SimulacaoAdapter(Context context, ArrayList<QuestaoView> itens)
+    public ResultadoAdapter(Context context, ArrayList<QuestaoView> itens)
     {
         this.itens = itens;
         mInflater = LayoutInflater.from(context);
@@ -39,13 +38,7 @@ public class SimulacaoAdapter extends BaseAdapter {
         return itens.get(position);
     }
 
-    private void selecionardo(String alt, QuestaoView item) {
-        if(alt.equals(item.getCorreto())){
-            item.setEscolha(true);
-        }else{
-            item.setEscolha(false);
-        }
-    }
+
     public long getItemId(int position)
     {
         return position;
@@ -56,7 +49,7 @@ public class SimulacaoAdapter extends BaseAdapter {
 
         item = itens.get(position);
 
-        view = mInflater.inflate(R.layout.questao_view, null);
+        view = mInflater.inflate(R.layout.resultado_view, null);
 
         ((TextView) view.findViewById(R.id.enunciadoTxt)).setText(item.getEnunciado());
         Button btnalt1 = ((Button) view.findViewById(R.id.alt1));
@@ -69,30 +62,10 @@ public class SimulacaoAdapter extends BaseAdapter {
         btnalt3.setText(item.getAlt3());
         btnalt4.setText(item.getAlt4());
 
-        btnalt1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                selecionardo("1", item);
-            }
-        });
-        btnalt2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                selecionardo("2", item);
-            }
-        });
-        btnalt3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                selecionardo("3", item);
-            }
-        });
-        btnalt4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                selecionardo("4", item);
-            }
-        });
+        btnalt1.setBackgroundColor(Color.TRANSPARENT);
+        btnalt2.setBackgroundColor(Color.TRANSPARENT);
+        btnalt3.setBackgroundColor(Color.TRANSPARENT);
+        btnalt4.setBackgroundColor(Color.TRANSPARENT);
 
 
         urlimg = item.getImg();
@@ -105,6 +78,34 @@ public class SimulacaoAdapter extends BaseAdapter {
             Picasso.with(view.getContext()).load(urlimg).into(img);
         }
 
+        switch (item.getEscolha()){
+            case "1":
+                btnalt1.setBackgroundColor(Color.RED);
+                break;
+            case "2":
+                btnalt2.setBackgroundColor(Color.RED);
+                break;
+            case "3":
+                btnalt3.setBackgroundColor(Color.RED);
+                break;
+            case "4":
+                btnalt4.setBackgroundColor(Color.RED);
+                break;
+        }
+        switch (item.getCorreto()){
+            case "1":
+                btnalt1.setBackgroundColor(Color.GREEN);
+                break;
+            case "2":
+                btnalt2.setBackgroundColor(Color.GREEN);
+                break;
+            case "3":
+                btnalt3.setBackgroundColor(Color.GREEN);
+                break;
+            case "4":
+                btnalt4.setBackgroundColor(Color.GREEN);
+                break;
+        }
 
         return view;
     }

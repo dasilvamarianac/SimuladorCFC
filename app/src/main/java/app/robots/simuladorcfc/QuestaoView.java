@@ -1,6 +1,8 @@
 package app.robots.simuladorcfc;
 
-public class QuestaoView {
+import java.io.Serializable;
+
+public class QuestaoView implements Serializable {
 
     private String enunciado;
     private String alt1;
@@ -9,13 +11,13 @@ public class QuestaoView {
     private String alt4;
     private String img;
     private String correto;
-    private boolean escolha;
+    private String escolha;
 
     public QuestaoView()
     {
     }
 
-    public QuestaoView(String enunciado, String alt1, String alt2, String alt3, String alt4, String correto, String img)
+    public QuestaoView(String enunciado, String alt1, String alt2, String alt3, String alt4, String correto, String img, String escolha)
     {
         this.enunciado = enunciado;
         this.alt1 = alt1;
@@ -24,6 +26,7 @@ public class QuestaoView {
         this.alt4 = alt4;
         this.img = img;
         this.correto = correto;
+        this.escolha = escolha;
 
     }
     public String getEnunciado() {
@@ -82,11 +85,11 @@ public class QuestaoView {
         this.correto = correto;
     }
 
-    public boolean getEscolha() {
+    public String getEscolha() {
         return escolha;
     }
 
-    public void setEscolha(boolean escolha) {
+    public void setEscolha(String escolha) {
         this.escolha = escolha;
     }
 

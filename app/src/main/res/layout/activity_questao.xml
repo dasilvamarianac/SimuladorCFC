@@ -1,0 +1,79 @@
+
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/placaImg"
+            android:layout_gravity="left|top"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="1.13"
+            android:layout_margin="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/enunciadoTxt"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="visible"
+            android:layout_weight="0.1"
+            android:layout_margin="5dp"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <Button
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/alt1"
+            android:gravity="left|center_vertical"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <Button
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/alt2"
+            android:gravity="left|center_vertical"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <Button
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/alt3"
+            android:gravity="left|center_vertical"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"/>
+
+        <Button
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/alt4"
+            android:gravity="left|center_vertical"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

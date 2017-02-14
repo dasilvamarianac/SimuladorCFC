@@ -44,7 +44,7 @@ public class MenuActivity extends Activity {
                 @Override
                 public void onClick(View v) {
                     pwindo.dismiss();
-                    Intent intent = new Intent(c, Simulacao.class);
+                    Intent intent = new Intent(c, Questao.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     c.startActivity(intent);
                 }
@@ -56,7 +56,7 @@ public class MenuActivity extends Activity {
                 @Override
                 public void onClick(View v) {
                     pwindo.dismiss();
-                    Intent intent = new Intent(c,Resultado.class);
+                    Intent intent = new Intent(c,Estatisticas.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     c.startActivity(intent);
 

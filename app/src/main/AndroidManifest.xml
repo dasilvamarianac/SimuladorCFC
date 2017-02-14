@@ -24,9 +24,10 @@
         <activity android:name=".Usuario" />
         <activity android:name=".Senha" />
         <activity android:name=".Inicial" />
-        <activity android:name=".Simulacao" />
         <activity android:name=".Resultado" />
-        <activity android:name=".MenuActivity"></activity>
+        <activity android:name=".Estatisticas" />
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".Questao"></activity>
     </application>
 
 </manifest>
