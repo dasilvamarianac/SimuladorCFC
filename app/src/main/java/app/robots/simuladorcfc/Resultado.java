@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -60,7 +62,16 @@ public class Resultado extends AppCompatActivity implements AdapterView.OnItemCl
 
         Intent intent = getIntent();
         itens =  (ArrayList<QuestaoView>)getIntent().getSerializableExtra("itens");
-        total.setText("Total: " + intent.getStringExtra("acertos"));
+        total.setText("Acertos: " + intent.getStringExtra("acertos"));
+
+        LinearLayout layout = (LinearLayout) findViewById(R.id.llayout);
+        layout.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Inicial.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(intent);
+            }
+        });
 
         createListView();
 

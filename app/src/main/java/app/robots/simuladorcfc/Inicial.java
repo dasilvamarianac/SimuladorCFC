@@ -1,6 +1,7 @@
 package app.robots.simuladorcfc;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -31,6 +32,14 @@ public class Inicial extends ActionBarActivity {
             }
         });
 
+        ImageButton inicio = (ImageButton) findViewById(R.id.iniBtn);
+        inicio.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Questao.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(intent);
+            }
+        });
     }
 
 }

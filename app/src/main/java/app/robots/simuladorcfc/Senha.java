@@ -87,27 +87,15 @@ public class Senha extends AppCompatActivity {
         View focusView = null;
 
         if(TextUtils.isEmpty(ssenha)){
-            Toast toast = new Toast(getApplicationContext());
-            ImageView view = new ImageView(getApplicationContext());
-            view.setImageResource(R.drawable.esenha);
-            toast.setView(view);
-            toast.show();
+            Toast.makeText(getApplicationContext(), "Senha invalida", Toast.LENGTH_SHORT).show();
             focusView = senha;
             cancel = true;
         } else if((TextUtils.isEmpty(snsenha)) || (!isPasswordValid(snsenha))){
-            Toast toast = new Toast(getApplicationContext());
-            ImageView view = new ImageView(getApplicationContext());
-            view.setImageResource(R.drawable.esenha);
-            toast.setView(view);
-            toast.show();
+            Toast.makeText(getApplicationContext(), "Nova senha invalida", Toast.LENGTH_SHORT).show();
             focusView = nsenha;
             cancel = true;
         }else if(!snsenha.equals(scsenha)){
-            Toast toast = new Toast(getApplicationContext());
-            ImageView view = new ImageView(getApplicationContext());
-            view.setImageResource(R.drawable.esenha);
-            toast.setView(view);
-            toast.show();
+            Toast.makeText(getApplicationContext(), "Confirmacao de senha nao correspondente", Toast.LENGTH_SHORT).show();
             focusView = csenha;
             cancel = true;
         }
@@ -124,18 +112,10 @@ public class Senha extends AppCompatActivity {
                     try {
                         JSONObject jsonObject = new JSONObject(response);
                         if(jsonObject.names().get(0).equals("success")){
-                            Toast toast = new Toast(getApplicationContext());
-                            ImageView view = new ImageView(getApplicationContext());
-                            view.setImageResource(R.drawable.ok);
-                            toast.setView(view);
-                            toast.show();
+                            Toast.makeText(getApplicationContext(), "Senha alterada com sucesso", Toast.LENGTH_SHORT).show();
                             finish();
                         }else {
-                            Toast toast = new Toast(getApplicationContext());
-                            ImageView view = new ImageView(getApplicationContext());
-                            view.setImageResource(R.drawable.esenha);
-                            toast.setView(view);
-                            toast.show();
+                            Toast.makeText(getApplicationContext(), "Erro na alteracao", Toast.LENGTH_SHORT).show();
                             senha.requestFocus();
                         }
                     } catch (JSONException e) {

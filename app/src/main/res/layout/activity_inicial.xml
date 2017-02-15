@@ -4,7 +4,8 @@
     android:id="@+id/activity_inicial"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="app.robots.simuladorcfc.Inicial">
+    tools:context="app.robots.simuladorcfc.Inicial"
+    android:background="@android:color/background_light">
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -27,8 +28,16 @@
         "
         android:layout_below="@+id/menu"
         android:layout_alignParentStart="true"
-        android:layout_height="70dp">
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="@android:color/background_light">
 
+        <ImageButton
+            android:layout_width="200dp"
+            android:id="@+id/iniBtn"
+            android:layout_height="200dp"
+            android:background="@drawable/btn"
+            android:elevation="1dp" />
     </LinearLayout>
 
 

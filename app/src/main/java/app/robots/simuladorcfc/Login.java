@@ -92,19 +92,11 @@ public class Login extends AppCompatActivity {
 
         // Check for a valid email address.
         if ((TextUtils.isEmpty(email))||(!isEmailValid(email))) {
-            Toast toast = new Toast(getApplicationContext());
-            ImageView view = new ImageView(getApplicationContext());
-            view.setImageResource(R.drawable.eemail);
-            toast.setView(view);
-            toast.show();
+            Toast.makeText(getApplicationContext(), "Email invalido", Toast.LENGTH_SHORT).show();
             focusView = usuario;
             cancel = true;
         } else if(TextUtils.isEmpty(passwords)){
-            Toast toast = new Toast(getApplicationContext());
-            ImageView view = new ImageView(getApplicationContext());
-            view.setImageResource(R.drawable.esenha);
-            toast.setView(view);
-            toast.show();
+            Toast.makeText(getApplicationContext(), "Senha invalida", Toast.LENGTH_SHORT).show();
             focusView = senha;
             cancel = true;
         }
@@ -131,17 +123,15 @@ public class Login extends AppCompatActivity {
 
                         } else {
 
-                            Toast toast = new Toast(getApplicationContext());
-                            ImageView view = new ImageView(getApplicationContext());
+
                             if (jsonObject.getString("error").equals("Senha")) {
-                                view.setImageResource(R.drawable.esenha);
+                                Toast.makeText(getApplicationContext(), "Senha invalida", Toast.LENGTH_SHORT).show();
                                 senha.requestFocus();
                             }else{
-                                view.setImageResource(R.drawable.eemail);
+                                Toast.makeText(getApplicationContext(), "Email ivalido", Toast.LENGTH_SHORT).show();
                                 usuario.requestFocus();
                             }
-                            toast.setView(view);
-                            toast.show();
+
 
                         }
                     } catch (JSONException e) {

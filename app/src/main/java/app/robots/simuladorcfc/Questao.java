@@ -142,9 +142,9 @@ public class Questao extends AppCompatActivity {
                     itens = new ArrayList<>();
                     for (int i = 0; i < array.length(); i++) {
 
-                        JSONObject row = array.getJSONObject(i);
+                        JSONObject row =   array.getJSONObject(i);
 
-                        enunciado = row.getString("enunciado");
+                        enunciado = Integer.toString(i+1) + ") " +row.getString("enunciado");
                         alt1 = row.getString("alternativa1");
                         alt2 = row.getString("alternativa2");
                         alt3 = row.getString("alternativa3");
@@ -231,11 +231,6 @@ public class Questao extends AppCompatActivity {
                     try {
                         JSONObject jsonObject = new JSONObject(response);
                         if(jsonObject.names().get(0).equals("success")){
-                            Toast toast = new Toast(getApplicationContext());
-                            ImageView view = new ImageView(getApplicationContext());
-                            view.setImageResource(R.drawable.ok);
-                            toast.setView(view);
-                            toast.show();
 
                             Intent intent = new Intent(getApplicationContext(), Resultado.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -244,11 +239,7 @@ public class Questao extends AppCompatActivity {
                             startActivity(intent);
 
                         }else {
-                            Toast toast = new Toast(getApplicationContext());
-                            ImageView view = new ImageView(getApplicationContext());
-                            view.setImageResource(R.drawable.euser);
-                            toast.setView(view);
-                            toast.show();
+                            Toast.makeText(getApplicationContext(), "Erro de banco" , Toast.LENGTH_SHORT).show();
                             finish();
                         }
 

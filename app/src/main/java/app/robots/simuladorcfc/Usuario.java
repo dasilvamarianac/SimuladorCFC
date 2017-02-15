@@ -88,19 +88,11 @@ public class Usuario extends AppCompatActivity {
             focusView = nome;
             cancel = true;
         }else if ((TextUtils.isEmpty(email))||(!isEmailValid(email))) {
-            Toast toast = new Toast(getApplicationContext());
-            ImageView view = new ImageView(getApplicationContext());
-            view.setImageResource(R.drawable.eemail);
-            toast.setView(view);
-            toast.show();
+            Toast.makeText(getApplicationContext(), "Email invalido", Toast.LENGTH_SHORT).show();
             focusView = usuario;
             cancel = true;
         } else if((TextUtils.isEmpty(passwords))||(!isPasswordValid(passwords))){
-            Toast toast = new Toast(getApplicationContext());
-            ImageView view = new ImageView(getApplicationContext());
-            view.setImageResource(R.drawable.esenha);
-            toast.setView(view);
-            toast.show();
+            Toast.makeText(getApplicationContext(), "Senha invalida", Toast.LENGTH_SHORT).show();
             focusView = senha;
             cancel = true;
         }
@@ -124,11 +116,7 @@ public class Usuario extends AppCompatActivity {
                             toast.show();
                             startActivity(new Intent(getApplicationContext(), Login.class));
                         }else {
-                            Toast toast = new Toast(getApplicationContext());
-                            ImageView view = new ImageView(getApplicationContext());
-                            view.setImageResource(R.drawable.euser);
-                            toast.setView(view);
-                            toast.show();
+                            Toast.makeText(getApplicationContext(), "Usuario nao cadastrado", Toast.LENGTH_SHORT).show();
                             finish();
                         }
 

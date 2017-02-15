@@ -29,19 +29,22 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
             android:layout_weight="0.1"
-            android:gravity="center">
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@color/colorPrimaryDark"
+            android:id="@+id/llayout">
 
             <TextView
                 android:text="Total: "
                 android:layout_width="match_parent"
                 android:id="@+id/totalTxt"
                 android:textAlignment="center"
-                android:background="@color/colorPrimary"
+                android:background="@color/colorPrimaryDark"
                 android:textStyle="bold"
                 android:textSize="24sp"
-                android:layout_height="30dp" />
+                android:textColor="@color/colorAccent"
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
